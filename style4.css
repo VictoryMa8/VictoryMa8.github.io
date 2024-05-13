@@ -7,6 +7,9 @@ body {
 h1 {
     text-align: center;
 }
+h2{
+  text-align:center;
+}
 
 .topnav {
     background-color:rgb(160, 140, 233);
