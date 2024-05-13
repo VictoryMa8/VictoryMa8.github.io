@@ -3,6 +3,7 @@ body {
     color:white;
     background-color:rgb(30, 6, 69);
 }
+
 h1 {
     text-align: center;
 }
@@ -43,4 +44,10 @@ h1 {
 }
 .pClass {
   text-align: center;
+}
+.image9 {
+  height: 30%;
+  width: 30%;
+  float: right;
+  margin: 5px;
 }
