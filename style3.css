@@ -86,3 +86,19 @@ h1 {
   button:hover {
     background-color: #8f8d8d;
   }
+
+  #scrollToTop {
+    display: none; 
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; 
+    border: none;
+    outline: none;
+    background-color:white; 
+    color:black;
+    cursor: pointer;
+    border-radius: 25%;
+    padding: 15px;
+    font-size: 15px;
+  }
