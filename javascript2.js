@@ -15,7 +15,7 @@ const quizData = [
         answer: "48%"
     },
     {
-        questions: "Why are microtransactions harmful?",
+        question: "Why are microtransactions harmful?",
         options: ["Since you don't know how much you're spending", "They can cause gambling disorders", "They can cause gaming disorders", "All of the above"],
         answer: "All of the above"
     },
