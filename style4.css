@@ -7,7 +7,9 @@ body {
 h1 {
     text-align: center;
 }
-
+h2{
+  text-align:center;
+}
 
 .topnav {
     background-color:rgb(160, 140, 233);
@@ -39,12 +41,14 @@ h1 {
   }
 
   .image10 {
-    float:left;
+    margin-left:auto;
+    margin-right:auto;
     height: 25%;
     width: 25%;
   }
   .image11 {
-   float:right;
+    margin-left:auto;
+    margin-right:auto;
     height: 40%;
     width: 40%;
   }
