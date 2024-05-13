@@ -92,30 +92,16 @@ button:hover {
 }
 
 .image12 {
-  height:25%;
-  width: 25%;
+  height:140px;
+  width: 100px;
   float: right;
   margin: 5px;
 }
 .image13 {
-  height:25%;
-  width: 25%;
+  height: 140px;
+  width: 100px;
   float: left;
   margin: 5px;
 }
 
-#scrollToTop {
-  display: none; 
-  position: fixed; 
-  bottom: 20px;
-  right: 20px;
-  z-index: 99; 
-  border: none;
-  outline: none;
-  background-color:white; 
-  color:black;
-  cursor: pointer;
-  border-radius: 25%;
-  padding: 15px;
-  font-size: 15px;
-}
+
