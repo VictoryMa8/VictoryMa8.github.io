@@ -33,3 +33,5 @@ function onImageClick6(){
 }
 const snapchat = document.getElementById('snapchat');
 snapchat.addEventListener('click', onImageClick6);
+
+
