@@ -1,0 +1,102 @@
+body {
+    background-color: #dad7cd;
+    color: #011627;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #011627;
+    display: flex;
+    justify-content: end;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: flex;
+    padding: 12px 12px;
+    text-decoration: none;
+    color: #fdfffc;
+}
+
+li a:hover {
+    background-color: #284b63;
+}
+
+.active {
+    background-color: #284b63;
+}
+
+#hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 50px;
+    gap: 50px;
+}
+#victor {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 8px solid #1b263b;
+}
+
+#desc {
+    width: 400px;
+}
+
+.social {
+    width: 50px;
+    margin: 5px 5px;
+}
+
+#timeline {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 200px 50px 200px;
+    border: 8px solid #1b263b;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.container {
+    border-bottom: 8px solid #1b263b;
+    max-width: 700px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer {
+    text-align: center;
+    margin: 0px 0px 50px 0px;
+}
+
+#scrollToTop {
+    display: none; 
+    position: fixed; 
+    bottom: 20px;
+    right: 20px;
+    z-index: 99; 
+    border: none;
+    outline: none;
+    background-color:#011627; 
+    color:white;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 15px 50px;
+    font-size: 15px;
+  }
