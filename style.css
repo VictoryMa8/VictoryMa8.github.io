@@ -5,7 +5,9 @@ body {
     font-weight: 700;
 }
 
-ul {
+/* nav bar */
+
+#nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -15,24 +17,26 @@ ul {
     justify-content: end;
 }
 
-li {
+#nav li {
     float: left;
 }
 
-li a {
+#nav li a {
     display: flex;
     padding: 12px 12px;
     text-decoration: none;
     color: #fdfffc;
 }
 
-li a:hover {
+#nav li a:hover {
     background-color: #284b63;
 }
 
-.active {
+#nav .active {
     background-color: #284b63;
 }
+
+/* hero */
 
 #hero {
     display: flex;
@@ -57,32 +61,11 @@ li a:hover {
     margin: 5px 5px;
 }
 
-#timeline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 100px 200px 50px 200px;
-    border: 8px solid #1b263b;
-    border-radius: 8px;
-    padding: 10px;
-}
+/* scroll to top */
 
-.container {
-    border-bottom: 8px solid #1b263b;
-    max-width: 700px;
-}
+*, html {
 
-.content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#footer {
-    text-align: center;
-    margin: 0px 0px 50px 0px;
+    scroll-behavior: smooth !important;
 }
 
 #scrollToTop {
@@ -99,5 +82,5 @@ li a:hover {
     border-radius: 8px;
     padding: 15px 50px;
     font-size: 15px;
-  }
+}
 
