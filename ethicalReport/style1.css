@@ -1,0 +1,107 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    background-color:rgb(30, 6, 69);
+}
+.image0 {
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  height: 75%;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+.pClass {
+    text-align: center;
+}
+
+.topnav {
+    background-color:rgb(160, 140, 233);
+    overflow:auto
+  }
+  
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #3904aa;
+    color: white;
+  }
+
+  .image1{
+    cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
+    height: 15%;
+    width: 15%;
+  }
+  .image2{
+    cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
+    height: 14%;
+    width: 14%;
+  }
+  .image3{
+    cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
+    height: 14%;
+    width: 14%;
+  }
+  .image4{
+    cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
+    height: 18%;
+    width: 17%;
+  }
+  .image5{
+    cursor: pointer;
+    margin-left:auto;
+    margin-right:auto;
+    height: 17%;
+    width: 17%;
+  }
+  .image6{
+    cursor: pointer;
+    height:14%;
+    width:14%;
+  }
+  .aClass {
+    color:white;
+  }
+
+#scrollToTop {
+  display: none; 
+  position: fixed; 
+  bottom: 20px;
+  right: 20px;
+  z-index: 99; 
+  border: none;
+  outline: none;
+  background-color:white; 
+  color:black;
+  cursor: pointer;
+  border-radius: 25%;
+  padding: 15px;
+  font-size: 15px;
+}

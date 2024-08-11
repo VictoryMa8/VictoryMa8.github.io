@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generate Random Passwords</title>
+        <link rel="stylesheet" href="genPass.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="pass">
+            <h1>Generate A <span id="green">Random Password</span></h1>
+            <p>Never use an insecure password again.</p>
+            <button id="generate" onclick="genPass()">Generate Passwords</button>
+            <div id="passwords">
+                <span id="pass1"></span>
+                <span id="pass2"></span>
+            </div>
+            <div id="copy-text">
+                <button id="copy1" onclick="copyPass1()">Copy Password 1</button>
+                <button id="copy2" onclick="copyPass2()">Copy Password 2</button>
+            </div>
+        </div>
+        <script src="genPass.js"></script>
+    </body>
+</html>

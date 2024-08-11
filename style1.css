@@ -1,8 +1,51 @@
 body {
     background-color: #dad7cd;
     color: #011627;
-    font-family: "Raleway", sans-serif;
+    font-family: sans-serif;
     font-weight: 700;
     margin: 0px;
     padding: 0px;
+}
+
+h1 {
+    padding: 10px;
+}
+
+#links {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 40px;
+}
+
+/* nav bar */
+
+#nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#344e41;
+    display: flex;
+    justify-content: end;
+}
+
+#nav li {
+    float: left;
+}
+
+#nav li a {
+    display: flex;
+    padding: 12px 12px;
+    text-decoration: none;
+    color: #fdfffc;
+    margin: 0px;
+}
+
+#nav li a:hover {
+    background-color: #3a5a40;
+}
+
+#nav .active {
+    background-color: #3a5a40;
 }
