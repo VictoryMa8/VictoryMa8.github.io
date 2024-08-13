@@ -97,3 +97,12 @@ body {
 #footer p, #footer a {
     color: #3a5a40 !important;
 }
+
+@media only screen and (max-width: 767px) {
+    #hero {
+        display: block;
+    }
+    #desc {
+        margin-top: 40px;
+    }
+}
