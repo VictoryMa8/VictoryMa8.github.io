@@ -55,3 +55,17 @@ p {
     text-align: center;
     display: none; /* work in progress */
 }
+
+#back-btn {
+    background-color: #10B981;
+    border: 2px solid #D5D4D8;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 20px;
+    width: 10%;
+    height: 30px;
+    text-align: center;
+    padding: 10px 30px;
+  }

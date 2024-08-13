@@ -81,3 +81,17 @@ ul li:hover {
     margin: 10px;
     color: darkgreen;
 }
+
+#back-btn {
+    background-color: darkgreen;
+    border: 4px solid rgb(83, 147, 83);
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 10px;
+    width: 25%;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+  }

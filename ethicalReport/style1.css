@@ -105,3 +105,18 @@ h2 {
   padding: 15px;
   font-size: 15px;
 }
+
+#back-btn {
+  background-color: rgb(160, 140, 233);
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: block;
+  margin: 10px auto;
+  width: 25%;
+  height: 40px;
+  text-align: center;
+  padding-top: 10px;
+}
