@@ -38,3 +38,9 @@ body {
 #nav .active {
     background-color: #3a5a40;
 }
+
+#main {
+    margin-top: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
