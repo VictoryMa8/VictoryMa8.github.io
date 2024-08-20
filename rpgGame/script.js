@@ -243,7 +243,7 @@ function levelUp() {
   xp -= xpToNextLevel;
   level++;
   xpToNextLevel *= 1.5;
-  health += (3 * level);
+  health += (25 + (level * 3));
   maxHealth += (4 * level);
   healthText.innerText = health;
   maxHealthText.innerText = maxHealth;
@@ -269,6 +269,8 @@ function dodge() {
 function defeatMonster() {
   gold += Math.floor(monsters[fighting].level * 6.7);
   gainXP(monsters[fighting].level);
+  health += getMonsterAttackValue(monsters[fighting].level);
+  healthText.innerText = health;
   goldText.innerText = gold;
   xpText.innerText = xp;
   update(locations[4]);
