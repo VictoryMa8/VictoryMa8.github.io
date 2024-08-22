@@ -242,9 +242,9 @@ function gainXP(amount) {
 function levelUp() {
   xp -= xpToNextLevel;
   level++;
-  xpToNextLevel *= 1.5;
-  health += (25 + (level * 3));
-  maxHealth += (4 * level);
+  xpToNextLevel = Math.floor(xpToNextLevel) * 1.25;
+  health += (10 + (level * 3));
+  maxHealth += (25 + (level * 3));
   healthText.innerText = health;
   maxHealthText.innerText = maxHealth;
   xpText.innerText = xp;
