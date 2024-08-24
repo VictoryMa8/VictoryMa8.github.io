@@ -1,13 +1,13 @@
 body {
   text-align: center;
-  background-color: #1e2c25
+  background-color: #023047;
 }
 
 #level-title {
   font-family: "Archivo Black", sans-serif;
   font-size: 2.5rem;
   margin:  5%;
-  color: #FEF2BF;
+  color: #e0f1ff;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
   display: inline-block;
   height: 200px;
   width: 200px;
-  border: 5px solid rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 20%;
 }
 
@@ -53,10 +53,10 @@ body {
 }
 
 #back-btn {
-  background-color: rgb(22, 69, 22);
-  border: 2px solid rgb(83, 147, 83);
+  background-color: #132238;
+  border: 2px outset #132238;
   border-radius: 4px;
-  color: white;
+  color: #bde0fe;
   text-decoration: none;
   font-size: 1.5rem;
   margin: 20px;
