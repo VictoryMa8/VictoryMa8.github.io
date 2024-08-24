@@ -20,6 +20,18 @@ h1 {
     font-size: 40px;
 }
 
+#links a {
+    color: #ffffff;
+    background-color: #507dbc;
+    border: 2px solid black;
+    border-bottom: 0px;
+    text-decoration: none;
+}
+
+#links a:hover {
+    background-color: #a1c6ea;
+}
+
 .icon {
     width: 100px;
     margin: 5px 5px;
@@ -32,7 +44,7 @@ h1 {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#344e41;
+    background-color:#03256c;
     display: flex;
     justify-content: end;
 }
@@ -50,9 +62,9 @@ h1 {
 }
 
 #nav li a:hover {
-    background-color: #3a5a40;
+    background-color: #1768ac;
 }
 
 #nav .active {
-    background-color: #3a5a40;
+    background-color: #1768ac;
 }

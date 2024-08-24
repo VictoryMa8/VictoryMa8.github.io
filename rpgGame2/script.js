@@ -50,7 +50,7 @@ const screens = [
   { 
     name: "Select class",
     text1: "Choose your class: ",
-    text2: "You can choose between a Warrior, Rogue, Wizard, or Archer",
+    text2: "You can choose between a Survivalist, Raider, Alchemist, or Wanderer",
     buttonTexts: ["Back", classes[1].name, classes[2].name, classes[3].name, classes[4].name],
     buttonFunctions: [backScreen, backScreen, backScreen, backScreen, backScreen]
   }

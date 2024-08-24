@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#344e41;
+    background-color:#03256c;
     display: flex;
     justify-content: end;
 }
@@ -32,11 +32,11 @@ body {
 }
 
 #nav li a:hover {
-    background-color: #3a5a40;
+    background-color: #1768ac;
 }
 
 #nav .active {
-    background-color: #3a5a40;
+    background-color: #1768ac;
 }
 
 #main {

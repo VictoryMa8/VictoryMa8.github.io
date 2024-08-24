@@ -14,7 +14,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#344e41;
+    background-color:#03256c;
     display: flex;
     justify-content: end;
 }
@@ -32,11 +32,11 @@ body {
 }
 
 #nav li a:hover {
-    background-color: #3a5a40;
+    background-color: #1768ac;
 }
 
 #nav .active {
-    background-color: #3a5a40;
+    background-color: #1768ac;
 }
 
 /* hero */
@@ -52,7 +52,7 @@ body {
     width: 400px;
     height: 400px;
     border-radius: 50%;
-    border: 8px solid #3a5a40;
+    border: 8px solid #03256c;
 }
 
 #desc {
@@ -79,7 +79,7 @@ body {
     z-index: 99; 
     border: none;
     outline: none;
-    background-color:#3a5a40;
+    background-color:#03256c;
     color:white;
     cursor: pointer;
     border-radius: 8px;
@@ -95,7 +95,7 @@ body {
 }
 
 #footer p, #footer a {
-    color: #3a5a40 !important;
+    color: #03256c !important;
 }
 
 @media only screen and (max-width: 767px) {
