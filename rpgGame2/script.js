@@ -50,6 +50,18 @@ const player = {
   classDesc: ""
 }
 
+const enemies = [
+  {
+    name: "Enemy Raider",
+    health: 100,
+    maxHealth: 100,
+    atk: 10,
+    def: 10,
+    spd: 10,
+    weapon: { name: "Makeshift Dagger", dmg: 5, dex: 5, rng: 5 }
+  }
+];
+
 // set player class
 function setPlayerClass(classIndex) {
   const selectedClass = classes[classIndex];
@@ -128,14 +140,14 @@ const screens = [
   { 
     name: "Game explanation",
     text1: "Not many people leave the town, because it is dangerous out in the wilderness. You currently are out collecting supplies from a nearby factory",
-    text2: "The sun is setting. Try to find a way back before it gets too dark, (WORK IN PROGRESS, GAME ENDS HERE)",
+    text2: "The sun is setting. Try to find a way back before it gets too dark.",
     buttonTexts: ["Walk North", "Walk East", "Walk South", "Walk West", "Random"],
     nextScreens: [9, 10, 11, 12, 11]
   },
   { 
-    name: "Wilderness 1.9",
+    name: "Wilderness",
     text1: "You walk north, there seems to be a figure in the distance.",
-    text2: "Choose a direction to continue walking in. (WORK IN PROGRESS, GAME ENDS HERE)",
+    text2: "Choose a direction to continue walking in.",
     buttonTexts: ["Continue North", "Walk East", "Walk South", "Walk West", "Random"],
     nextScreens: [13, 14, 15, 16, 14]
   }
