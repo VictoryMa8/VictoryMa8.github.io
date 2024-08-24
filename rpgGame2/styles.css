@@ -12,6 +12,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content:space-around;
+    height: 900px;
 }
 
 #player-stats, #text-boxes, #inventory {
@@ -38,10 +39,24 @@ body {
 
 button {
     height: 25%;
-    width: 25%;
+    width: 30%;
     margin: 10px;
 }
 
 button:hover {
     cursor: pointer;
 }
+
+#back-btn {
+    background-color: #132238;
+    border: 2px outset #132238;
+    border-radius: 4px;
+    color: #e7ecef;
+    text-decoration: none;
+    font-size: 1.25rem;
+    margin: 20px;
+    width: 25%;
+    height: 30px;
+    text-align: center;
+    padding: 10px 30px;
+  }
