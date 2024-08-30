@@ -52,13 +52,22 @@ const player = {
 
 const enemies = [
   {
-    name: "Enemy Raider",
-    health: 100,
-    maxHealth: 100,
-    atk: 10,
+    name: "Hostile Raider",
+    health: 150,
+    maxHealth: 150,
+    atk: 30,
     def: 10,
     spd: 10,
-    weapon: { name: "Makeshift Dagger", dmg: 5, dex: 5, rng: 5 }
+    currentWeapon: { name: "Makeshift Dagger", dmg: 10, dex: 5, rng: 5 }
+  },
+  {
+    name: "Mutated Deer",
+    health: 200,
+    maxHealth: 200,
+    atk: 20,
+    def: 10,
+    spd: 10,
+    currentWeapon: { name: "Hoof", dmg: 5, dex: 5, rng: 5 }
   }
 ];
 
@@ -78,17 +87,25 @@ function setPlayerClass(classIndex) {
   updatePlayerStatsDisplay();
 }
 
+// been to certain a screen already?
+let beenTo11 = false;
+let beenTo12 = false;
+let beenTo15 = false;
+
+// screen 16 conditional message
+let message16 = "After walking that long road you come across your town.";
+
 // game screens
 const screens = [
   { 
-    name: "Start game",
+    name: "0. Start game",
     text1: "Welcome to the nuclear wasteland.", 
     text2: "Press start to begin.",
     buttonTexts: ["Start", "Start", "Start", "Start", "Start"],
     nextScreens: [1, 1, 1, 1, 1]
   },
   { 
-    name: "Select class",
+    name: "1. Select class",
     text1: "Choose your class before you go into the wasteland: ",
     text2: "You can choose between a Survivalist, Raider, Alchemist, or Wanderer.",
     buttonTexts: [classes[1].name, classes[2].name, classes[3].name, classes[4].name, "Back"],
@@ -96,62 +113,208 @@ const screens = [
     classChoices: [1, 2, 3, 4, undefined]
   },
   {
-    name: "Class selected",
+    name: "2. Class selected",
     text1: () => `You are the ${player.class}, who is ${player.classDesc}.`,
     text2: () => "Press continue to start the game or go back to change your selection.",
     buttonTexts: ["Continue", "Continue", "Continue", "Continue", "Back"],
     nextScreens: [3, 3, 3, 3, 1]
   },
   { 
-    name: "Game explanation",
+    name: "3. Game explanation - 1",
     text1: "You must be wondering what is happening right now.", 
     text2: "The year is 2174, it has been 150 years since the world was plunged into darkness.",
     buttonTexts: ["Continue", "Continue", "Continue", "Continue", "Continue"],
     nextScreens: [4, 4, 4, 4, 4]
   },
   { 
-    name: "Game explanation",
+    name: "4. Game explanation - 2",
     text1: "The 'Last War' ended in nuclear annihilation. It is unclear how many people died, experts estimate more than 90% of the world population did not survive the fallout.", 
-    text2: "Many of the rich and wealthy hid in their bunkers, while the average working man perished.",
+    text2: "Many of the rich and wealthy hid in their bunkers, while the average working civilian perished.",
     buttonTexts: ["Continue", "Continue", "Continue", "Continue", "Back"],
     nextScreens: [5, 5, 5, 5, 3]
   },
   { 
-    name: "Game explanation",
+    name: "5. Game explanation - 3",
     text1: "Due to the conflict of the 'Last War', major cities such as New York, Los Angeles, London, and Tokyo, were completely wiped off the map.", 
     text2: "The surviving population of Earth reside in areas where the nukes never reached, and where the nuclear radiation is least potent.",
     buttonTexts: ["Continue", "Continue", "Continue", "Continue", "Back"],
     nextScreens: [6, 6, 6, 6, 4]
   },
   { 
-    name: "Game explanation",
+    name: "6. Game explanation - 4",
     text1: "It is believed that places such as central Mongolia, Siberia, the Amazon Rainforest, Polynesia, the Sahara Desert, and Northern Canada are the safest for humans to inhabit.", 
     text2: "Over the decades after the war, tribes started to form and society tried to rebuild itself in these areas.",
     buttonTexts: ["Continue", "Continue", "Continue", "Continue", "Back"],
     nextScreens: [7, 7, 7, 7, 5]
   },
   { 
-    name: "Game explanation",
+    name: "7. Game explanation - 5",
     text1: () => `You are a ${player.class} who lives in North America. Your ancestors lived in what used to be Minnesota of the United States.`,
     text2: "You are apart of a tribe that lives in what used to be a small town in Ontario, not too far from what was the U.S. border.",
     buttonTexts: ["Continue", "Continue", "Continue", "Continue", "Back"],
     nextScreens: [8, 8, 8, 8, 6]
   },
   { 
-    name: "Game explanation",
-    text1: "Not many people leave the town, because it is dangerous out in the wilderness. You currently are out collecting supplies from a nearby factory",
+    name: "8. Game explanation - 6",
+    text1: "Not many people leave the town, because it is dangerous out in the wilderness. You are currently out collecting supplies from a nearby factory",
     text2: "The sun is setting. Try to find a way back before it gets too dark.",
-    buttonTexts: ["Walk North", "Walk East", "Walk South", "Walk West", "Random"],
-    nextScreens: [9, 10, 11, 12, 11]
+    buttonTexts: ["Walk North", "Walk East", "Walk South", "Walk West", "---"],
+    nextScreens: [9, 10, 11, 12, 8]
   },
   { 
-    name: "Wilderness",
+    name: "9. Wilderness - 1",
     text1: "You walk north, there seems to be a figure in the distance.",
-    text2: "Choose a direction to continue walking in.",
-    buttonTexts: ["Continue North", "Walk East", "Walk South", "Walk West", "Random"],
-    nextScreens: [13, 14, 15, 16, 14]
-  }
+    text2: "Keep walking in this direction?",
+    buttonTexts: ["Yes", "Yes", "Yes", "Yes", "Turn Back"],
+    nextScreens: [13, 13, 13, 13, 8]
+  },
+  { 
+    name: "10. Wilderness - 2",
+    text1: "You walk east towards a road.. you vaguely remember this area.",
+    text2: "Keep going this direction?",
+    buttonTexts: ["Yes", "Yes", "Yes", "Yes", "Turn Back"],
+    nextScreens: [14, 14, 14, 14, 8]
+  },
+  { 
+    name: "11. Wilderness - 3",
+    text1: "You walk south towards some trees ...hmm this doesn't look right.",
+    text2: "You suspect that turning back is the safest option.",
+    buttonTexts: ["Turn Back", "Turn Back", "Turn Back", "Turn Back", "Turn Back"],
+    nextScreens: [8, 8, 8, 8, 8]
+  },
+  { 
+    name: "12. Wilderness - 4",
+    text1: "You walk west and find a random shack",
+    text2: "You found a Medkit! You decide to put it in your backpack and go back.",
+    buttonTexts: ["Go Back", "Go Back", "Go Back", "Go Back", "Go Back"],
+    nextScreens: [8, 8, 8, 8, 8]
+  },
+  { 
+    name: "13. Encounter - 1",
+    text1: "The figure turns out to be an unfriendly raider!",
+    text2: "You decide that you must fight in order to survive.",
+    buttonTexts: ["Enter Combat", "Enter Combat", "Enter Combat", "Enter Combat", "Enter Combat"],
+    nextScreens: [15, 15, 15, 15, 15]
+  },
+  { 
+    name: "14. Lonely Road",
+    text1: "The road seems to go on for a while...",
+    text2: "You believe that you are going the right direction though, so you keep going.",
+    buttonTexts: ["Continue Forward", "Continue Forward", "Continue Forward", "Continue Forward", "Continue Forward"],
+    nextScreens: [16, 16, 16, 16, 16]
+  },
+  { 
+    name: "15. Encounter - 2",
+    text1: () => `You ready your ${player.currentWeapon.name} for a fight!`,
+    text2: () => `Combat commencing soon...`,
+    buttonTexts: ["...", "...", "...", "...", "..."],
+    nextScreens: [15, 15, 15, 15, 15]
+  },
+  { 
+    name: "16. Convergence of 'Encounter' and 'Lonely Road'",
+    text1: () => `${message16}`,
+    text2: () => `You decide to keep moving forward.`,
+    buttonTexts: ["Keep Going", "Keep Going", "Keep Going", "Keep Going", "Keep Going"],
+    nextScreens: [17, 17, 17, 17, 17]
+  },
+  { 
+    name: "17. Back In Town",
+    text1: "The guards see you from afar and start opening the gate to town.",
+    text2: "Relief sets in as you walk towards them.",
+    buttonTexts: ["Onward", "Onward", "Onward", "Onward", "Onward"],
+    nextScreens: [18, 18, 18, 18, 18]
+  },
 ];
+
+// combat related functionality
+let inCombat = false;
+
+function calculateDamage(attacker, defender) {
+  let baseDamage = (attacker.atk - defender.def) * 2;
+  let randomDamage = (Math.floor(Math.random() * 10) + 1) + baseDamage;
+  return Math.floor(Math.max(20, randomDamage));
+}
+
+function playerAttack(enemy) {
+  // calculate damage
+  let damage = calculateDamage(player, enemy);
+  enemy.health = Math.max(0, enemy.health - damage);
+
+  // update text
+  $("#text-1").text(`Enemy: ${enemy.name} | Health: ${enemy.health}/${enemy.maxHealth}`);
+  $("#text-2").text(`You dealt ${damage} damage to ${enemy.name}...`);
+  updateScreenContent();
+
+  // update buttons
+  for (let i = 0; i < 5; i++) {
+    const currButton = $(`#btn-${i+1}`);
+    currButton.off("click");
+    currButton.text("...");
+  }
+
+  // after 2 seconds, enemy will attack
+  setTimeout(() => {
+    if (enemy.health <= 0) {
+      endCombat(enemy);
+    } else {
+      enemyAttack(enemy);
+    }
+  }, 2000)
+}
+
+function enemyAttack(enemy) {
+  // after player is done attacking, start enemy attack
+  $("#text-2").text(`${enemy.name} is in the process of attacking you...`);
+
+  // after 2 seconds, show result of enemy attack
+  setTimeout(() => {
+    let damage = calculateDamage(enemy, player);
+    player.health = Math.max(0, player.health - damage);
+    $("#text-1").text(`Enemy: ${enemy.name} | Health: ${enemy.health}/${enemy.maxHealth}`);
+    $("#text-2").text(`${enemy.name} dealt ${damage} damage to you with a ${enemy.currentWeapon.name}!`);
+    updatePlayerStatsDisplay();
+
+    // after 2 seconds, let player attack again
+    setTimeout(() => {
+      if (player.health <= 0) {
+        endCombat(enemy);
+      } else {
+        enablePlayerAttack(enemy);
+      }
+    }, 2000)
+  }, 2000)
+}
+
+function enablePlayerAttack(enemy) {
+  $("#text-1").text(`Enemy: ${enemy.name} | Health: ${enemy.health}/${enemy.maxHealth}`);
+  $("#text-2").text(`Attack with your ${player.currentWeapon.name}!`);
+  for (let i = 0; i < 5; i++) {
+    const currButton = $(`#btn-${i+1}`);
+    currButton.off("click");
+    currButton.text("Attack");
+    currButton.on("click", () => playerAttack(enemy));
+  }
+}
+
+function startCombatWith(enemy) {
+  inCombat = true;
+  $("#text-1").text(`Enemy: ${enemy.name} | Health: ${enemy.health}/${enemy.maxHealth}`);
+  $("#text-2").text("Combat has begun!");
+  enablePlayerAttack(enemy);
+}
+
+function endCombat(enemy) {
+  inCombat = false;
+  if (player.health <= 0) {
+    $("#text-2").text("You have been defeated...");
+  } else {
+    $("#text-2").text(`You have defeated ${enemy.name}! Changing environment...`);
+  }
+  setTimeout(() => {
+    currentScreen++;
+    changeScreen(currentScreen);
+  }, 3000);
+}
 
 // start of game
 let currentScreen = 0;
@@ -168,15 +331,42 @@ function changeScreen(screenNumber, classIndex) {
       console.log(`Player class set to ${player.class}`)
     }
 
+    if (!beenTo11 && screenNumber === 11) {
+      screens[8].buttonTexts[2] = "---";
+      screens[8].nextScreens[2] = 8;
+      beenTo11 = true;
+    }
+
+    if (!beenTo12 && screenNumber === 12) {
+      addItemToInv({ name: "Medkit", desc: "Heals the player greatly when injured."});
+      screens[8].buttonTexts[3] = "---";
+      screens[8].nextScreens[3] = 8;
+      beenTo12 = true;
+    }
+
+    if (screenNumber === 15 && !inCombat) {
+      message16 = "After that rough battle you see your town in the distance.";
+      setTimeout(() => {
+        startCombatWith(enemies[0]);
+      }, 2000);
+    }
+
+    updatePlayerStatsDisplay();
     updateScreenContent();
   } else {
     console.log("Invalid screen number");
   }
 }
 
-function updateScreenContent() {
+// add item to player inventory
+function addItemToInv(item) {
+  player.inventory.push(item);
+}
 
-  // changing text-1, text2, and current screen number
+function updateScreenContent() {
+  
+  // changing text-1, text-2, and current screen number if not in combat
+  if (!inCombat) {
   $("#text-1").text(typeof screens[currentScreen].text1 === 'function' 
     ? screens[currentScreen].text1() 
     : screens[currentScreen].text1);
@@ -186,15 +376,16 @@ function updateScreenContent() {
     : screens[currentScreen].text2);
 
   $("#currscre-text").text(currentScreen);
-  // changing button texts and functions
-  for (let i = 0; i < 5; i++) {
-    const currButton = $(`#btn-${i+1}`);
-    currButton.off("click");
-    currButton.text(screens[currentScreen].buttonTexts[i] || "Error");
-    currButton.on("click", () => changeScreen(
-      screens[currentScreen].nextScreens[i],
-      screens[currentScreen].classChoices ? screens[currentScreen].classChoices[i] : undefined
-    ));
+    // changing button texts and functions
+    for (let i = 0; i < 5; i++) {
+      const currButton = $(`#btn-${i+1}`);
+      currButton.off("click");
+      currButton.text(screens[currentScreen].buttonTexts[i] || "Error");
+      currButton.on("click", () => changeScreen(
+        screens[currentScreen].nextScreens[i],
+        screens[currentScreen].classChoices ? screens[currentScreen].classChoices[i] : undefined
+      ));
+    }
   }
 }
 
@@ -216,6 +407,13 @@ function updatePlayerStatsDisplay() {
   $("#spd-text").text(player.spd);
 
   // inventory and current weapon
-  $("inv-text").text(player.inventory);
+  $("#inv-text").text("");
+  for (let i = 0; i < player.inventory.length; i++) {
+    if (i !== player.inventory.length - 1) {
+      $("#inv-text").append(`${player.inventory[i].name}, `);
+    } else {
+      $("#inv-text").append(player.inventory[i].name);
+    }
+  }
   $("#currweap-text").text(player.currentWeapon.name);
 }
