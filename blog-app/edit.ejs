@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/main.css">
+        <title>Edit Your Blog Post</title>
+    </head>
+</head>
+<body>
+    <h1>Edit Your Post That Was Made: <%= post["date"]%></h1>
+    <form id="edit-form" action="/edit/<%= id %>" method="POST">
+        <input type="text" name="postTitle" value="<%= post["title"] %>" />
+        <textarea name="postBody" rows="10" cols="75"><%= post["body"] %></textarea>
+        <input type="submit" value="Update Post"/>
+    </form>
+</body>
+</html>

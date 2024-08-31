@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>My Blog Website | Victory Ma</title>
+</head>
+<body>
+    <h1>Welcome To My Blog</h1>
+    <div id="main">
+        <h2>Add a post to the blog...</h2>
+        <form id="main-form" action="/submit" method="POST">
+            <input type="text" name="postTitle" placeholder="Title..." />
+            <textarea name="postBody" placeholder="Type your thoughts here..." rows="10" cols="75"></textarea>
+            <input type="submit" value="Post"/>
+        </form>
+        <h2>Posts Will Be Shown Below!</h2>
+        <form action="/clear" method="POST">
+            <button type="submit" id="clear-button">Clear All Posts</button>
+        </form>
+        <span id="main-posts">
+            <% let postCount = 0; %>
+            <% let postCount2 = 0; %>
+            <% if (locals.arrayOfPosts) { %>
+                <% arrayOfPosts.forEach((element, index) => { %>
+                    <% if (postCount >= 5) { %>
+                        <% postCount = 0 %>
+                        <div class="line-break"></div>
+                    <% } %>
+                    <% postCount++ %>
+                    <% postCount2++ %>
+                    <div class="blog-post">
+                        <form action="/edit/<%= index %>" method="GET">
+                            <button type="submit">Edit</button>
+                        </form>
+                        <form action="/delete/<%= index %>" method="POST">
+                            <button type="submit">Delete</button>
+                        </form>
+                        <h2><%= postCount2 %>. <%= element["title"]%></h2>
+                        <p><%= element.date %></p>
+                        <p><%= element["body"]%></p>
+                    </div>
+                <% }) %>
+            <% } %>
+        </span>
+    </div>
+</body>
+</html>

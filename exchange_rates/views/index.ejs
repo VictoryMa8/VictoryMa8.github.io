@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title>Exchange Rates</title>
+</head>
+<body>
+    <h1>Exchange Rates For The Top Ten Most Traded Currencies</h1>
+    <h2>Rates Last Updated: <%= locals.data.time_last_update_utc %> </h2>
+    <table>
+        <tr>
+            <th>Most Common Place(s) of Utilization</th>
+            <th>ISO 4217 Code</th>
+            <th>Exchange Rate With USD</th>
+        </tr>
+    <% for (let i = 0; i < locals.arrayTopTen.length; i++) { %>
+        <tr>
+            <td> <%= locals.arrayTopTen[i].place %> </td>
+            <td> <%= locals.arrayTopTen[i].name %> </td>
+            <td> <%= locals.arrayTopTen[i].rate %> </td>
+        </tr> 
+    <% } %>
+    </table>
+    <div id="compare-div">
+        <h2><label for="cars">Compare Two Currencies</label></h2>
+        <form id="compare-form" action="/compare/" method="POST">
+            <select id="compare-1" name="compare-1">
+                <% for (let i = 0; i < locals.arrayTopTen.length; i++) { %>
+                    <option value="<%=i%>"> <%= locals.arrayTopTen[i].name %> </option>
+                <% } %>
+            </select>
+            <select id="compare-2" name="compare-2">
+                <% for (let i = 0; i < locals.arrayTopTen.length; i++) { %>
+                    <option value="<%=i%>"> <%= locals.arrayTopTen[i].name %> </option>
+                <% } %>
+            </select>
+            <button type="submit" id="compare-button">Compare</button>
+        </form>
+        <% if (locals.compareArray[0]) { %>
+            <h1> 
+                <%= locals.compareArray[0] %> <%= locals.compareArray[2] %>
+                is equal to 
+                <%= locals.compareArray[1].toFixed(5) %> <%= locals.compareArray[3] %> </h1>
+        <% } %>
+        </div>
+</body>
+</html>

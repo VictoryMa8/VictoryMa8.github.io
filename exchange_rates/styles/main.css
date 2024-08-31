@@ -1,0 +1,46 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #006d77;
+    color: white;
+}
+table {
+    border-collapse: collapse;
+    width: 75%;
+}
+
+td, th {
+    border: 1px solid #83c5be;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+#compare-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #83c5be;
+    width: 75%
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+form select, form button {
+    width: 30%;
+    height: 30%;
+    font-size: 2rem;
+    font-family: sans-serif;
+    margin: 0px 5px;
+    border: 2px solid #83c5be;
+}
+
+form button {
+    width: 50%;
+    background: white;
+}

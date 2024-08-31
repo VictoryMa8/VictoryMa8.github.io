@@ -1,0 +1,116 @@
+body {
+    background-color: #1b263b;
+    font-family: 'DM Serif Display', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+h1 {
+    color:#e0e1dd;
+}
+
+#main {
+    background-color: #415a77;
+    color: #e0e1dd;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-form, #edit-form {
+    background-color: #778da9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 300px;
+    padding: 20px;
+    border: 2px solid #e0e1dd;
+    border-radius: 10px;
+}
+
+input[name="postTitle"] {
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 15pt;
+    width: 40%;
+    margin: 10px;
+}
+
+input[name="postTitle"]::placeholder {
+    color: #415a77;
+}
+
+textarea[name="postBody"] {
+    color: black;
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 15pt;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+textarea[name="postBody"]::placeholder {
+    color: #415a77;
+}
+
+textarea { 
+    height: auto;
+    max-width: 75%;
+}
+
+input[type="submit"] {
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 15pt;
+    width: 15%;
+    height: 10%;
+}
+
+#edit-form input[type="submit"] {
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 15pt;
+    width: 20%;
+    height: 10%;
+}
+
+#main-posts {
+    color:#e0e1dd;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.blog-post {
+    background-color: #0d1b2a;
+    text-align: center;
+    width: 15%;
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.line-break {
+    width: 100%;
+}
+
+#clear-button {
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 15pt;
+    width: 200px;
+    height: 25%;
+}
+
+button[type="submit"] {
+    margin-top: 5px;
+    font-family: 'DM Serif Display', sans-serif;
+    font-size: 10pt;
+    width: 100px;
+    height: 25%;
+}
