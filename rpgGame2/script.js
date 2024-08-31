@@ -55,19 +55,19 @@ const enemies = [
     name: "Hostile Raider",
     health: 150,
     maxHealth: 150,
-    atk: 30,
-    def: 10,
+    atk: 25,
+    def: 5,
     spd: 10,
-    currentWeapon: { name: "Makeshift Dagger", dmg: 10, dex: 5, rng: 5 }
+    currentWeapon: { name: "Makeshift Dagger", dmg: 10, dex: 10, rng: 5 }
   },
   {
     name: "Mutated Deer",
     health: 200,
     maxHealth: 200,
-    atk: 20,
-    def: 10,
+    atk: 15,
+    def: 15,
     spd: 10,
-    currentWeapon: { name: "Hoof", dmg: 5, dex: 5, rng: 5 }
+    currentWeapon: { name: "Hoof", dmg: 5, dex: 10, rng: 5 }
   }
 ];
 
@@ -307,13 +307,16 @@ function endCombat(enemy) {
   inCombat = false;
   if (player.health <= 0) {
     $("#text-2").text("You have been defeated...");
+    setTimeout(() => {
+      changeScreen(0);
+    }, 3000);
   } else {
     $("#text-2").text(`You have defeated ${enemy.name}! Changing environment...`);
+    setTimeout(() => {
+      currentScreen++;
+      changeScreen(currentScreen);
+    }, 3000);
   }
-  setTimeout(() => {
-    currentScreen++;
-    changeScreen(currentScreen);
-  }, 3000);
 }
 
 // start of game
