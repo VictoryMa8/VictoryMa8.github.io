@@ -243,7 +243,11 @@ const screens = [
 let inCombat = false;
 
 function calculateDamage(attacker, defender) {
-  let baseDamage = (attacker.atk - defender.def) * 2;
+  let weaponDamage = attacker.currentWeapon.dmg + (attacker.currentWeapon.rng / 2);
+  let baseDamage = (attacker.atk - defender.def) * 2 + weaponDamage;
+  if (attacker.spd > defender.spd) {
+    baseDamage += (attacker.spd / 3)
+  }
   let randomDamage = (Math.floor(Math.random() * 10) + 1) + baseDamage;
   return Math.floor(Math.max(20, randomDamage));
 }
@@ -354,7 +358,7 @@ function changeScreen(screenNumber, classIndex) {
     }
 
     if (!beenTo12 && screenNumber === 12) {
-      addItemToInv({ name: "Medkit", desc: "Heals the player greatly when injured."});
+      addItemToInv(items[0]);
       screens[8].buttonTexts[3] = "---";
       screens[8].nextScreens[3] = 8;
       beenTo12 = true;
