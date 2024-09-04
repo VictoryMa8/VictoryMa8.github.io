@@ -8,6 +8,10 @@ const weapons = [
   { name: "Revolver", dmg: 10, dex: 10, rng: 10 }
 ]
 
+const items = [
+  { name: "Medkit", desc: "Heals the player greatly when injured."}
+]
+
 // health & mana total = 250 ... stat total = 50 (besides none)
 // atk = attack, def = defense, spd = speed
 const classes = [
@@ -56,17 +60,26 @@ const enemies = [
     health: 150,
     maxHealth: 150,
     atk: 25,
-    def: 5,
-    spd: 10,
+    def: 10,
+    spd: 15,
     currentWeapon: { name: "Makeshift Dagger", dmg: 10, dex: 10, rng: 5 }
   },
   {
     name: "Mutated Deer",
     health: 200,
     maxHealth: 200,
-    atk: 15,
+    atk: 20,
     def: 15,
     spd: 10,
+    currentWeapon: { name: "Hoof", dmg: 5, dex: 10, rng: 5 }
+  },
+  {
+    name: "Irradiated Bear",
+    health: 250,
+    maxHealth: 250,
+    atk: 30,
+    def: 30,
+    spd: 5,
     currentWeapon: { name: "Hoof", dmg: 5, dex: 10, rng: 5 }
   }
 ];
