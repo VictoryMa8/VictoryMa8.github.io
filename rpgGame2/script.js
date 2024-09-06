@@ -1,4 +1,4 @@
-// stat total = 30 (besides fists)
+// starting weapons stat total = 30 (besides fists)
 // dmg = damage, dex = dexterity, rng = range
 const weapons = [
   { name: "Fists", dmg: 5, dex: 5, rng: 5 }, // 0
@@ -8,27 +8,31 @@ const weapons = [
   { name: "Revolver", dmg: 10, dex: 10, rng: 10 }
 ]
 
+// all items
 const items = [
-  { name: "Medkit", desc: "Heals the player greatly when injured."}
+  { name: "Medkit", desc: "Heals the player greatly when injured."},
+  { name: "Key", desc: "Unlocks a door... to somewhere..."}
 ]
 
-// health & mana total = 250 ... stat total = 50 (besides none)
 // atk = attack, def = defense, spd = speed
+// stat formula for balance: stats for a class should add up to 100 'points' (besides the 'none' class)
+// health is worth 1/4 a point, atk/def/spd is worth 1 point
+// for instance, for the survivalist has 200 hp (50 points), and atk/def/spd total of 50 (50 points), 100 points total
 const classes = [
-  { name: "None", maxHealth: 100, mana: 100, atk: 10, def: 10, spd: 10, weapon: weapons[0],
+  { name: "None", maxHealth: 100, atk: 10, def: 10, spd: 10, weapon: weapons[0],
     desc: ""
    },
-  { name: "Survivalist", maxHealth: 200, mana: 50, atk: 25, def: 20, spd: 5, weapon: weapons[1], 
-    desc: "a tough and experienced wilderness expert with high health and a powerful hunting rifle"
+  { name: "Survivalist", maxHealth: 200, atk: 25, def: 20, spd: 5, weapon: weapons[1], 
+    desc: "a tough and experienced wilderness expert who can withstand the elements, they sport a powerful hunting rifle"
    },
-  { name: "Raider", maxHealth: 150, mana: 100, atk: 20, def: 5, spd: 25, weapon: weapons[2],
-    desc: "a quick and crafty outlaw with a sawed-off shotgun ...usually aimed at unexpecting victims"
+  { name: "Raider", maxHealth: 160, atk: 25, def: 10, spd: 25, weapon: weapons[2],
+    desc: "a quick and crafty outlaw with a sawed-off shotgun ...that is usually aimed at unexpecting victims"
    },
-  { name: "Alchemist", maxHealth: 100, mana: 150, atk: 25, def: 5, spd: 20, weapon: weapons[3],
-    desc: "an intelligent potion maker who knows much about the world... also holds a submachine gun"
+  { name: "Alchemist", maxHealth: 120, atk: 25, def: 25, spd: 20, weapon: weapons[3],
+    desc: "an intelligent potion maker who knows much about the world... they also happen to wield a submachine gun"
    },
-  { name: "Wanderer", maxHealth: 150, mana: 100, atk: 20, def: 10, spd: 20, weapon: weapons[4],
-    desc: "a worthy foe for anyone who crosses paths with them, knows their revolver well"
+  { name: "Wanderer", maxHealth: 160, atk: 20, def: 20, spd: 20, weapon: weapons[4],
+    desc: "a quiet and introspective person, an expert of post-nuclear society, and effective with their revolver"
    }
 ]
 
@@ -42,8 +46,6 @@ const player = {
   // stats
   health: 100,
   maxHealth: 100,
-  mana: 100,
-  maxMana: 100,
   atk: 10,
   def: 10,
   spd: 10,
@@ -59,17 +61,17 @@ const enemies = [
     name: "Hostile Raider",
     health: 150,
     maxHealth: 150,
-    atk: 25,
-    def: 10,
+    atk: 15,
+    def: 15,
     spd: 15,
-    currentWeapon: { name: "Makeshift Dagger", dmg: 10, dex: 10, rng: 5 }
+    currentWeapon: { name: "Makeshift Dagger", dmg: 5, dex: 5, rng: 5 }
   },
   {
     name: "Mutated Deer",
     health: 200,
     maxHealth: 200,
-    atk: 20,
-    def: 15,
+    atk: 10,
+    def: 10,
     spd: 10,
     currentWeapon: { name: "Hoof", dmg: 5, dex: 10, rng: 5 }
   },
@@ -77,10 +79,10 @@ const enemies = [
     name: "Irradiated Bear",
     health: 250,
     maxHealth: 250,
-    atk: 30,
-    def: 30,
+    atk: 20,
+    def: 20,
     spd: 5,
-    currentWeapon: { name: "Hoof", dmg: 5, dex: 10, rng: 5 }
+    currentWeapon: { name: "Claws", dmg: 10, dex: 10, rng: 5 }
   }
 ];
 
@@ -89,8 +91,6 @@ function setPlayerClass(classIndex) {
   const selectedClass = classes[classIndex];
   player.health = selectedClass.maxHealth;
   player.maxHealth = selectedClass.maxHealth;
-  player.mana = selectedClass.mana;
-  player.maxMana = selectedClass.mana;
   player.atk = selectedClass.atk;
   player.def = selectedClass.def;
   player.spd = selectedClass.spd;
@@ -328,7 +328,7 @@ function endCombat(enemy) {
       changeScreen(0);
     }, 3000);
   } else {
-    $("#text-2").text(`You have defeated ${enemy.name}! Changing environment...`);
+    $("#text-2").text(`You have defeated ${enemy.name}!`);
     setTimeout(() => {
       currentScreen++;
       changeScreen(currentScreen);
@@ -415,11 +415,9 @@ function updatePlayerStatsDisplay() {
   $("#xptnl-text").text(player.xpToNextLevel);
   $("#gold-text").text(player.gold);
 
-  // update health and mana
+  // update health
   $("#hp-text").text(player.health);
   $("#maxhp-text").text(player.maxHealth);
-  $("#mana-text").text(player.mana);
-  $("#maxmana-text").text(player.maxMana);
 
   // update attack, speed, and defense
   $("#atk-text").text(player.atk);
