@@ -244,7 +244,7 @@ const screens = [
 let inCombat = false;
 
 function calculateDamage(attacker, defender) {
-  let weaponDamage = attacker.currentWeapon.dmg + (attacker.currentWeapon.rng / 2);
+  let weaponDamage = attacker.currentWeapon.dmg + (attacker.currentWeapon.dex / 2) + (attacker.currentWeapon.rng / 3);
   let baseDamage = (attacker.atk - defender.def) * 2 + weaponDamage;
   if (attacker.spd > defender.spd) {
     baseDamage += (attacker.spd / 3)
