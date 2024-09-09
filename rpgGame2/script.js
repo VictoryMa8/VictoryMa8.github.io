@@ -11,7 +11,8 @@ const weapons = [
 // all items
 const items = [
   { name: "Medkit", desc: "Heals the player greatly when injured."},
-  { name: "Key", desc: "Unlocks a door... to somewhere..."}
+  { name: "Key", desc: "Unlocks a door... to somewhere..."},
+  { name: "Flashbang", desc: "Allows the player to incapacitate the enemy and quickly escape combat."}
 ]
 
 // atk = attack, def = defense, spd = speed
