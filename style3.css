@@ -62,3 +62,8 @@ body {
 h2 {
     margin: 20px;
 }
+
+.icon {
+    width: 100px;
+    margin: 5px 5px;
+}
