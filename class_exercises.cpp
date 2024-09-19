@@ -32,6 +32,7 @@ string isGreaterThan10(int x) {
 
 int main() {
     my_function(100);
+    my_function(50);
     cout << computeFactorial(11) << endl;
     cout << isGreaterThan10(100) << endl;
     cout << isGreaterThan10(5) << endl;
