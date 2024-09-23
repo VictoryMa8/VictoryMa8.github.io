@@ -84,6 +84,15 @@ const enemies = [
     def: 20,
     spd: 5,
     currentWeapon: { name: "Claws", dmg: 10, dex: 10, rng: 5 }
+  },
+  {
+    name: "Southern Faction Leader",
+    health: 300,
+    maxHealth: 300,
+    atk: 20,
+    def: 20,
+    spd: 20,
+    currentWeapon: { name: "AK-47", dmg: 10, dex: 10, rng: 10 }
   }
 ];
 
@@ -324,7 +333,7 @@ function startCombatWith(enemy) {
 function endCombat(enemy) {
   inCombat = false;
   if (player.health <= 0) {
-    $("#text-2").text("You have been defeated...");
+    $("#text-2").text("You have been defeated... returning to main menu");
     setTimeout(() => {
       changeScreen(0);
     }, 3000);
