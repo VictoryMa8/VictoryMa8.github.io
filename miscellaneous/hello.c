@@ -17,6 +17,7 @@ int printA(char a) {
 int main(void) {
     printA(a);
     printA(b);
+    printf("%d\n", a);
     printf("Enter a number: \n");
     scanf("%d", &num1);
     printf("%d is definitely a number!\n", num1);
