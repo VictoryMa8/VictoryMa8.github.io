@@ -1,6 +1,8 @@
 #include <stdio.h>
 
-int num1;
+float num1;
+float num2;
+
 char a = 'a';
 char b = 'b';
 
@@ -15,11 +17,16 @@ int printA(char a) {
 }
 
 int main(void) {
-    printA(a);
-    printA(b);
-    printf("%d\n", a);
-    printf("Enter a number: \n");
-    scanf("%d", &num1);
-    printf("%d is definitely a number!\n", num1);
+
+    printf("Enter a number: ");
+    scanf("%g", &num1);
+    printf("Enter a number: ");
+    scanf("%g", &num2);
+
+    printf("%g + %g = %g\n", num1, num2, num1 + num2);
+    printf("%g - %g = %g\n", num1, num2, num1 - num2);
+    printf("%g * %g = %g\n", num1, num2, num1 * num2);
+    printf("%g / %g = %g\n", num1, num2, num1 / num2);
+    
     return 0;
 }
