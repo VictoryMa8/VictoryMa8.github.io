@@ -22,28 +22,29 @@ public:
 		}
 	}
 
-	int getSize() {return size;}
+	int getSize() { return size; }
 
-	int getCapacity() {return capacity;}
+	int getCapacity() { return capacity; }
 
 	int parentIndex(int i) {
-		// TO DO: implement this function
-		return 0;
+		return floor((i - 1) / 2);
 	}
 
 	int leftChildIndex(int i) {
-		// TO DO: implement this function
-		return 0;
+		return ((i * 2) + 1);
 	}
 
 	int rightChildIndex(int i) {
-		// TO DO: implement this function
-		return 0;
+		return ((i * 2) + 2);
 	}
 
 	int getMax() {
-		// TO DO: implement this function
-		return 0;
+		if (size == 0) {
+			throw out_of_range("Heap is empty");
+		}
+		else {
+			return heap[0];
+		}
 	}
 
 	int extractMax() {
@@ -51,30 +52,52 @@ public:
 			cout << "Heap is empty; unable to extract max\n";
 			return -1;
 		}
-
+		int temp;
+		int max = heap[0];
 		// swap the current max with the last item in the heap
-
+		heap[0] = heap[size - 1];
+		heap[size - 1] = max;
 		// decrement the size of the heap
-
+		size--;
 		// set current to index 0 (the root)
+		int current = 0;
 		// find the index of the left and right children of the root
-
+		int left = leftChildIndex(current);
+		int right = rightChildIndex(current);
 		// while the current index is in range, and:
+		while (leftChildIndex(current) < size) {
 			// the index of the left child is in range and the left child is greater than the current value
 			// or
 			// the index of the right child is in range and the right child is greater than the current value
-
+			if ((left < size && heap[left] > heap[current]) || (right < size && heap[right] > heap[current])) {
 			// if both indices are in range and the left child is greater than the right child, or if the right child is out of range
+				if ((right >= size) || heap[left] > heap[right]) {
 				// swap current with its left child
 				// update the index of current
-			// else if right child is in range
-				// swap current with its right child
-				// update the index of current
-
+				temp = heap[current];
+				heap[current] = heap[left];
+				heap[left] = temp;
+				current = left;
+				}
+							// else if right child is in range
+				else {
+					// swap current with its right child
+					// update the index of current
+					temp = heap[current];
+					heap[current] = heap[right];
+					heap[right] = temp;
+					current = rightChildIndex(current);
+				}
+			}
+			else {
+				break;
+			}
 			// update the indices of the left and right children for the new index of current
-
+			left = leftChildIndex(current);
+			right = rightChildIndex(current);
+		}
 		// return the maximum value which was removed
-		return 0;
+		return max;
 	}
 
 	void insert(int val) {
@@ -82,19 +105,26 @@ public:
         	cout << "Heap is full; unable to insert\n"; 
         	return; 
     	}
-
+		int temp;
     	// assign val to the next open index
-
+		heap[size] = val;
     	// increment size
-
+		size++;
     	// set current to be the index where val was just added
+		int current = size - 1;
     	// find the parent index of current
-
+		int parentIndex1 = parentIndex(current);
     	// while the parent index is at least 0 and the parent is less than current
     		// swap parent and current
     		// update the index of current
     		// update the index of parent for the new index of current
-
+		while (parentIndex1 >= 0 && heap[parentIndex1] < heap[current]) {
+			temp = heap[parentIndex1];
+			heap[parentIndex1] = heap[current];
+			heap[current] = temp;
+			current = parentIndex1;
+			parentIndex1 = parentIndex(current);
+		}
     	return;
 	}
 
