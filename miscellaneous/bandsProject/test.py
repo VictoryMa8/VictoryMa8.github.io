@@ -15,7 +15,7 @@ def findUniqueNameSongs(threshold, outputfile): # Unique names
   colNames = ["artist","song","name"] # Creates column parameters for the subset
   subset = allNames[colNames] # Creates subset
   subset = subset.drop_duplicates() # Removes duplicates of same name in a song
-  subset =     subset.groupby(["artist","song"],as_index=False).count() # Compiles unique names into one variable for each song
+  subset = subset.groupby(["artist","song"],as_index=False).count() # Compiles unique names into one variable for each song
   test = subset.sort_values(["name"], ascending=[False]) # Makes the dataframe in descending order
   out = test.loc[test["name"] >= threshold] # Initializes the threshold for unique name instances
   out = out.rename(columns={'name':'number'}) # Renames "name" column to "number" (of unique names)
