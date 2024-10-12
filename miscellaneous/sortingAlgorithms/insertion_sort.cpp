@@ -1,5 +1,9 @@
 #include <iostream>
+#include <chrono>
+#include <fstream>
+#include <random>
 using namespace std;
+using namespace std::chrono;
 
 void insertion_sort(int arr[], int n) {
     int i;
@@ -127,17 +131,42 @@ bool test(void (*func)(int*, int)) {
 	return pass; // returns true if all tests pass, otherwise returns false
 }
 
-void timing_experiment() {
-
+void timing_experiment(void (*func)(int*, int)) {
+    for (int i = 0; i <= 1000; i += 10) { // create arrays with 0, 10, 20, ..., 1000 size
+        int test[i]; // array with size i
+        int total_time = 0; // total time for one size
+        for (int trials = 0; trials <= 1000; trials++) { // test the current size 1000 times
+            for (int j = 0; j < i; j++) { // fill array with random integers
+                test[j] = rand();
+            }
+            auto start = steady_clock::now();		
+            func(test, i);
+            auto stop = steady_clock::now();
+            auto duration = duration_cast<nanoseconds>(stop - start);
+            total_time += duration.count();
+        }
+        int avg_time = total_time / 1000; // average time for one size with 1000 trials
+        cout << "Average time for an array of size " << i << ": " << avg_time << endl;
+    }
 }
 
 int main() {
+
+    // insertion sort: part a
     int arr[10] = {6, 2, 8, 3, 7, 11, 23, 1, -5, -2};
     insertion_sort(arr, 10);
     for (int i = 0; i < 10; i++){
         cout << arr[i] << endl;
     }
 
+    // part b
     test(insertion_sort);
+
+    // part c
+    timing_experiment(insertion_sort);
+
+    // part d
+    
+
     return 0;
 }
