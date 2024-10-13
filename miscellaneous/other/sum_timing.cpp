@@ -60,7 +60,7 @@ int main() {
 	// TO DO: test function sum2
 
 	// Call the test function
-	/*
+
 	cout << "Running tests:" << endl;
 
 	// these variable determine what values of n we test, and the number of trials
@@ -93,6 +93,6 @@ int main() {
     }
     my_file.close();
 
-	*/
+
     return 0;
 }

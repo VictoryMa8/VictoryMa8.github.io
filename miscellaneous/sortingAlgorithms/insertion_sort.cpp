@@ -132,8 +132,13 @@ bool test(void (*func)(int*, int)) {
 }
 
 void timing_experiment(void (*func)(int*, int)) {
+    // open output file
+    ofstream my_file;
+    my_file.open("insertion_sort_runtimes.csv");
+    my_file << "n, time\n";
+
     for (int i = 0; i <= 1000; i += 10) { // create arrays with 0, 10, 20, ..., 1000 size
-        int test[i]; // array with size i
+        int* test = new int[i]; // array with size i
         int total_time = 0; // total time for one size
         for (int trials = 0; trials <= 1000; trials++) { // test the current size 1000 times
             for (int j = 0; j < i; j++) { // fill array with random integers
@@ -145,9 +150,13 @@ void timing_experiment(void (*func)(int*, int)) {
             auto duration = duration_cast<nanoseconds>(stop - start);
             total_time += duration.count();
         }
-        int avg_time = total_time / 1000; // average time for one size with 1000 trials
+        int avg_time = total_time / 1000; // average time for the current size with 1000 trials
+        my_file << i << "," << avg_time << "\n"; // write result to the csv file
         cout << "Average time for an array of size " << i << ": " << avg_time << endl;
+        delete[] test; // deallocate memory
     }
+
+    my_file.close(); // close file
 }
 
 int main() {
@@ -164,9 +173,6 @@ int main() {
 
     // part c
     timing_experiment(insertion_sort);
-
-    // part d
-    
 
     return 0;
 }
