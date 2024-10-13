@@ -139,7 +139,7 @@ void timing_experiment(void (*func)(int*, int)) {
 
     for (int i = 0; i <= 1000; i += 10) { // create arrays with 0, 10, 20, ..., 1000 size
         int* test = new int[i]; // array with size i
-        int total_time = 0; // total time for one size
+        long long total_time = 0; // total time for one size
         for (int trials = 0; trials <= 1000; trials++) { // test the current size 1000 times
             for (int j = 0; j < i; j++) { // fill array with random integers
                 test[j] = rand();
@@ -147,7 +147,7 @@ void timing_experiment(void (*func)(int*, int)) {
             auto start = steady_clock::now();		
             func(test, i);
             auto stop = steady_clock::now();
-            auto duration = duration_cast<nanoseconds>(stop - start);
+            auto duration = duration_cast<microseconds>(stop - start);
             total_time += duration.count();
         }
         int avg_time = total_time / 1000; // average time for the current size with 1000 trials
