@@ -1,4 +1,4 @@
-import pandas as pd # Imports pandas and refers to it as pd
+import pandas as pd
 
 def findName(name,outputFile): # Popular names
   allNames = pd.read_csv("allNames.csv",sep="\t")
@@ -8,7 +8,6 @@ def findName(name,outputFile): # Popular names
   out = subset.loc[subset["name"] == name]
   out = out.drop(columns="name")
   out.to_csv(outputFile, sep='\t', index=False) 
-  # Seven lines of code
   
 def findUniqueNameSongs(threshold, outputfile): # Unique names
   allNames = pd.read_csv("allNames.csv", sep="\t") # Opens csv of songs
@@ -20,7 +19,6 @@ def findUniqueNameSongs(threshold, outputfile): # Unique names
   out = test.loc[test["name"] >= threshold] # Initializes the threshold for unique name instances
   out = out.rename(columns={'name':'number'}) # Renames "name" column to "number" (of unique names)
   out.to_csv(outputfile, sep=',', index=False) # Writes dataframe onto file without index numbers
-  # Nine lines of code
 
 def findRepeatedNameSongs(threshold, outputfile): # Repeat names
   allNames = pd.read_csv("allNames.csv", sep="\t") # Opens csv of songs
@@ -31,7 +29,6 @@ def findRepeatedNameSongs(threshold, outputfile): # Repeat names
   test = subset.sort_values(["times"], ascending=[False]) # Sorts descending 
   out = test.loc[test["times"] >= threshold] # Gathers data according to threshold
   out.to_csv(outputfile, sep=',', index=False) # Writes data onto csv
-  # Eight lines of code
 
 def countNameDecades(name, outputfile): # Timeless names
   allNames = pd.read_csv("allNames.csv",sep="\t")
@@ -51,7 +48,6 @@ def countNameDecades(name, outputfile): # Timeless names
   above10 = len(above10)
   out = pd.DataFrame({"Number":[above70,above80,above90,above00,above10],"Decade":[1970,1980,1990,2000,2010]})
   out.to_csv(outputfile, sep='\t', index=False) 
- # Seventeen lines of code
 
 def countStartLetter(outputfile): # Lettering, first letter
   allNames = pd.read_csv("allNames.csv", sep="\t")  # Reads csv
@@ -78,7 +74,6 @@ def countStartLetter(outputfile): # Lettering, first letter
   out = allFreq[["names", "difference"]] # Simplifies data
   out = out.rename(columns = {"names" : "letter", "difference" : "proporation"})
   out.to_csv(outputfile, sep='\t', index=False) # Outputs the file
-  # Twenty one lines of code
 
 def countEndLetter(outputfile): # Lettering, last letter
   allNames = pd.read_csv("allNames.csv", sep="\t") # Reads csv
@@ -105,7 +100,6 @@ def countEndLetter(outputfile): # Lettering, last letter
   out = allFreq[["names", "difference"]] # Simplifies data
   out = out.rename(columns = {"names" : "letter", "difference" : "proporation"}) # Renames columns
   out.to_csv(outputfile, sep='\t', index=False) # Outputs csv
-  # Twenty one lines of code
   
 def main(): # Tests
   findName("Jack","tests/jack.csv")
@@ -123,4 +117,4 @@ def main(): # Tests
   countStartLetter("tests/names.start.csv")
   countEndLetter("tests/names.end.csv")
   
-main() # Main function
+main()
