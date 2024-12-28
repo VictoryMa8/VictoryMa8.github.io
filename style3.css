@@ -1,7 +1,7 @@
 body {
     background-color: #dad7cd;
     color: #011627;
-    font-family: "Raleway", sans-serif;
+    font-family: Inconsolata, sans-serif;
     font-weight: 700;
     margin: 0px;
     padding: 0px;
@@ -17,6 +17,7 @@ body {
     background-color:#03256c;
     display: flex;
     justify-content: end;
+    font-family: "Raleway", sans-serif;
 }
 
 #nav li {
@@ -41,7 +42,6 @@ body {
 
 #main {
     margin-top: 20px;
-    font-family: sans-serif;
     text-align: center;
 }
 
