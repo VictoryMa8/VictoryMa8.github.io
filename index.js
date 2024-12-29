@@ -1,4 +1,4 @@
-function scrollToTop() {
+/*function scrollToTop() {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
@@ -17,7 +17,7 @@ function scrollFunction() {
     } else {
       scrollToTopBtn.style.display = "none";
     }
-}
+}*/
 
 /*!
  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
