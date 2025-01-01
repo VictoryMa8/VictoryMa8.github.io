@@ -1,49 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio | Victory Ma</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <link rel="stylesheet" href="style1.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inconsolata:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=1">
-        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?v=1">
-        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?v=1">
-        <link rel="manifest" href="/site.webmanifest">
-    </head>
-    <body>
-        <div id="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="projects.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div id="links">
-            <h1>Project Demos</h1>
-            <h2>Latest Project: Exchange Rate Website</h2>
-            <h2>Nuclear Wasteland ARPG is currently in development.</h2>
-            <a href="./exchangeDemo.html">Exchange Rate Platform <img class="icon" src="./images/nodejs.png" alt="Node.js logo"><img class="icon" src="./images/express.png" alt="Express.js logo"><img class="icon" src="./images/ejs.png" alt="EJS logo"><img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./blogDemo.html">Blog Platform <img class="icon" src="./images/nodejs.png" alt="Node.js logo"><img class="icon" src="./images/express.png" alt="Express.js logo"><img class="icon" src="./images/ejs.png" alt="EJS logo"><img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./rpgGame2/">Nuclear Wasteland ARPG <img class="icon" src="./images/jquery.png" alt="jQuery logo"><img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./rmsDemo.html">Roster Management System  <img class="icon" src="./images/cpp.png" alt="C++ logo"></a>
-            <a href="./lteDemo.html">Leads Tracker Extension <img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./ethicalReport/index.html" class="lastEl">Research Project: Ethical Report <img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <h2 id="specifier">Older (and much simpler) Projects:</h2>
-            <a href="./shoppingListDemo.html">Simple Shopping List App <img class="icon" src="./images/firebase.png" alt="Firebase logo"><img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./simonSays/index.html">Simon Says Game <img class="icon" src="./images/jquery.png" alt="jQuery logo"><img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./generatePassword/genPass.html">Secure Password Generator <img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./unitConverter/index.html">Imperial / Metric Unit Converter <img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./calorieCounter/index.html">Calorie Counter <img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-            <a href="./todoList/index.html" class="lastEl">Todo List App <img class="icon" src="./images/htmlcssjs.png" alt="HTML, CSS, and JavaScript logos"></a>
-        </div>
-        <br>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Victory Ma</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inconsolata:wght@200..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="apple-touch-icon.png?v=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon-32x32.png?v=1"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon-16x16.png?v=1"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <div id="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="links">
+      <h1>Project Demos</h1>
+      <h2>Latest Project: Exchange Rate Website</h2>
+      <h2>Nuclear Wasteland ARPG is currently in development.</h2>
+      <a href="./exchangeDemo.html"
+        >Exchange Rate Platform
+        <img class="icon" src="./images/nodejs.png" alt="Node.js logo" /><img
+          class="icon"
+          src="./images/express.png"
+          alt="Express.js logo" /><img
+          class="icon"
+          src="./images/ejs.png"
+          alt="EJS logo" /><img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./blogDemo.html"
+        >Blog Platform
+        <img class="icon" src="./images/nodejs.png" alt="Node.js logo" /><img
+          class="icon"
+          src="./images/express.png"
+          alt="Express.js logo" /><img
+          class="icon"
+          src="./images/ejs.png"
+          alt="EJS logo" /><img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./rpgGame2/"
+        >Nuclear Wasteland ARPG
+        <img class="icon" src="./images/jquery.png" alt="jQuery logo" /><img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./rmsDemo.html"
+        >Roster Management System
+        <img class="icon" src="./images/cpp.png" alt="C++ logo"
+      /></a>
+      <a href="./lteDemo.html"
+        >Leads Tracker Extension
+        <img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./ethicalReport/index.html" class="lastEl"
+        >Research Project: Ethical Report
+        <img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <h2 id="specifier">Older Projects (they're quite simple):</h2>
+      <a href="./shoppingListDemo.html"
+        >Simple Shopping List App
+        <img class="icon" src="./images/firebase.png" alt="Firebase logo" /><img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./simonSays/index.html"
+        >Simon Says Game
+        <img class="icon" src="./images/jquery.png" alt="jQuery logo" /><img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./generatePassword/genPass.html"
+        >Secure Password Generator
+        <img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./unitConverter/index.html"
+        >Imperial / Metric Unit Converter
+        <img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./calorieCounter/index.html"
+        >Calorie Counter
+        <img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+      <a href="./todoList/index.html" class="lastEl"
+        >Todo List App
+        <img
+          class="icon"
+          src="./images/htmlcssjs.png"
+          alt="HTML, CSS, and JavaScript logos"
+      /></a>
+    </div>
+    <br />
+  </body>
 </html>
