@@ -1,88 +1,89 @@
 body {
-    background-color: #dad7cd;
-    color: #011627;
-    font-family: Inconsolata, sans-serif;
-    font-weight: 700;
-    margin: 0px;
-    padding: 0px;
+  background-color: #dad7cd;
+  color: #011627;
+  font-family: Inconsolata, sans-serif;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px;
 }
 
 h1 {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 #links {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    font-size: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
 }
 
 #links a {
-    color: #ffffff;
-    background-color: #507dbc;
-    border: 2px solid black;
-    border-radius: 10px;
-    text-decoration: none;
-    width: 70%;
-    margin: 5px;
-    padding: 20px;
+  color: #ffffff;
+  background-color: #507dbc;
+  border: 2px solid black;
+  border-radius: 10px;
+  text-decoration: none;
+  width: 70%;
+  margin: 5px;
+  padding: 20px;
 }
 
 #links a:hover {
-    background-color: #a1c6ea;
+  background-color: #a1c6ea;
 }
 
 .icon {
-    width: 70px;
-    height: 70%;
-    max-height: 50px;
-    margin: 5px 5px;
+  width: 70px;
+  height: 70%;
+  max-height: 50px;
+  margin: 5px 5px;
 }
 
 /* nav bar */
 
 #nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:#03256c;
-    display: flex;
-    justify-content: end;
-    font-family: Raleway, sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #03256c;
+  display: flex;
+  justify-content: end;
+  font-family: Raleway, sans-serif;
 }
 
 #nav li {
-    float: left;
+  float: left;
 }
 
 #nav li a {
-    display: flex;
-    padding: 12px 12px;
-    text-decoration: none;
-    color: #fdfffc;
-    margin: 0px;
+  display: flex;
+  padding: 12px 12px;
+  text-decoration: none;
+  color: #fdfffc;
+  margin: 0px;
 }
 
 #nav li a:hover {
-    background-color: #1768ac;
+  background-color: #1768ac;
 }
 
 #nav .active {
-    background-color: #1768ac;
+  background-color: #1768ac;
 }
 
 #specifier {
-    margin: 20px;
+  margin: 20px;
 }
 
 #footer {
-    text-align: center;
+  text-align: center;
 }
 
-#footer p, #footer a {
-    color: #03256c !important;
+#footer p,
+#footer a {
+  color: #03256c !important;
 }

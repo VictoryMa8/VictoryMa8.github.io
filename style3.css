@@ -1,69 +1,72 @@
 body {
-    background-color: #dad7cd;
-    color: #011627;
-    font-family: Inconsolata, sans-serif;
-    font-weight: 700;
-    margin: 0px;
-    padding: 0px;
+  background-color: #dad7cd;
+  color: #011627;
+  font-family: Inconsolata, sans-serif;
+  font-weight: 700;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* nav bar */
 
 #nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color:#03256c;
-    display: flex;
-    justify-content: end;
-    font-family: "Raleway", sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #03256c;
+  display: flex;
+  justify-content: end;
+  font-family: "Raleway", sans-serif;
 }
 
 #nav li {
-    float: left;
+  float: left;
 }
 
 #nav li a {
-    display: flex;
-    padding: 12px 12px;
-    text-decoration: none;
-    color: #fdfffc;
-    margin: 0px;
+  display: flex;
+  padding: 12px 12px;
+  text-decoration: none;
+  color: #fdfffc;
+  margin: 0px;
 }
 
 #nav li a:hover {
-    background-color: #1768ac;
+  background-color: #1768ac;
 }
 
 #nav .active {
-    background-color: #1768ac;
+  background-color: #1768ac;
 }
 
 #main {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #back-btn {
-    background-color: #03256c;
-    border-radius: 4px;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    margin: 10px auto;
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    padding: 10px 30px;
-    display: block;
+  background-color: #03256c;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  margin: 10px auto;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  padding: 10px 30px;
+  display: block;
 }
 
 h2 {
-    margin: 20px;
+  margin: 20px;
 }
 
 .icon {
-    width: 100px;
-    margin: 5px 5px;
+  width: 100px;
+  margin: 5px 5px;
 }
