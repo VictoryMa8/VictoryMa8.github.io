@@ -45,6 +45,7 @@ body {
   justify-content: center;
   align-items: center;
   margin: 100px 50px;
+  margin-bottom: 50px;
   gap: 50px;
 }
 #victor {
@@ -52,6 +53,10 @@ body {
   height: 360px;
   border-radius: 50%;
   border: 8px solid #03256c;
+}
+
+a {
+  text-decoration: none;
 }
 
 #desc {
