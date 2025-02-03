@@ -69,7 +69,6 @@ a {
 }
 
 /* scroll to top */
-
 *,
 html {
   scroll-behavior: smooth !important;
