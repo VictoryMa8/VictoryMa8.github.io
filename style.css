@@ -118,6 +118,7 @@ html {
   }
 }
 
+/* media query */
 @media only screen and (max-width: 400px) {
   #hero {
     display: block;
