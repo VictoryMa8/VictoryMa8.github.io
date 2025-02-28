@@ -11,7 +11,7 @@ h1 {
   padding-top: 20px;
 }
 
-#links {
+#links, #older-projects {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -20,7 +20,11 @@ h1 {
   font-size: 40px;
 }
 
-#links a {
+#older-projects {
+  display: none;
+}
+
+#links a, #older-projects a {
   color: #ffffff;
   background-color: #6089e2;
   border: 2px solid black;
@@ -31,7 +35,11 @@ h1 {
   padding: 20px;
 }
 
-#links a:hover {
+#older-projects a {
+  width: 60%;
+}
+
+#links a:hover, #older-projects a:hover {
   background-color: #a1c6ea;
 }
 

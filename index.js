@@ -23,7 +23,23 @@ function scrollFunction() {
  * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
+*/
+
+const specifier = document.getElementById("specifier");
+const oldStuff = document.getElementById("older-projects");
+
+specifier.addEventListener('click', function() {
+  if (oldStuff.style.display === "flex") {
+    oldStuff.style.display = "none";
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  } else {
+    oldStuff.style.display = "flex";
+    oldStuff.scrollIntoView();
+  }
+})
 
 (() => {
   'use strict'
