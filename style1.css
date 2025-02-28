@@ -74,7 +74,13 @@ h1 {
 }
 
 #specifier {
-  margin: 20px;
+  color: #ffffff;
+  background-color: #405c97;
+  border: 2px solid black;
+  text-decoration: none;
+  width: 40%;
+  margin: 5px;
+  padding: 20px;
 }
 
 #footer {
