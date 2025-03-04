@@ -127,3 +127,9 @@ html {
     margin-top: 40px;
   }
 }
+
+#attributions {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
