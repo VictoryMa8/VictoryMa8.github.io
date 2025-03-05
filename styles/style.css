@@ -44,17 +44,18 @@ html, body {
 }
 
 /* hero */
-
 #hero {
   width: 100%;
-  height: 50%;
+  height: auto;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   margin: 100px 50px;
   margin-bottom: 50px;
   gap: 50px;
 }
+
 #victor {
   width: 360px;
   height: 360px;
@@ -64,6 +65,10 @@ html, body {
 
 a {
   text-decoration: none;
+}
+
+a.text-primary:hover {
+  color: #03256c !important; 
 }
 
 #desc {
@@ -99,7 +104,6 @@ html {
 }
 
 /* footer */
-
 #footer {
   text-align: center;
 }
@@ -109,16 +113,35 @@ html {
   color: #03256c !important;
 }
 
+/* about section */
+#about {
+  padding: 50px;
+  background-color: #f4f4f9;
+  color: #011627;
+  text-align: center;
+}
+
+#about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+/* media queries */
 @media only screen and (max-width: 767px) {
   #hero {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
   #desc {
     margin-top: 40px;
   }
 }
 
-/* media query */
 @media only screen and (max-width: 400px) {
   #hero {
     display: block;

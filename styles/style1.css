@@ -1,7 +1,7 @@
 body {
   background-color: #dad7cd;
   color: #011627;
-  font-family: Inconsolata, sans-serif;
+  font-family: "Raleway", sans-serif;
   font-weight: 700;
   margin: 0px;
   padding: 0px;
@@ -95,7 +95,49 @@ h1 {
   text-align: center;
 }
 
-#footer p,
-#footer a {
+#footer p, #footer a {
   color: #03256c !important;
+}
+
+/* media queries */
+@media only screen and (max-width: 767px) {
+  #links, #older-projects {
+    font-size: 30px;
+  }
+
+  #links a, #older-projects a {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .icon {
+    width: 50px;
+    max-height: 50px;
+  }
+
+  #specifier {
+    width: 80%;
+    padding: 15px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #links, #older-projects {
+    font-size: 20px; 
+  }
+
+  #links a, #older-projects a {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .icon {
+    width: 40px;
+    max-height: 40px;
+  }
+
+  #specifier {
+    width: 100%;
+    padding: 10px;
+  }
 }
