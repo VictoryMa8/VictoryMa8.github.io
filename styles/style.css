@@ -1,13 +1,14 @@
 body {
   background-color: #dad7cd;
   color: #011627;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   margin: 0px;
   padding: 0px;
 }
 
-html, body {
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -68,11 +69,17 @@ a {
 }
 
 a.text-primary:hover {
-  color: #03256c !important; 
+  color: #03256c !important;
 }
 
 #desc {
   width: 400px;
+}
+
+.icon {
+  width: 100px;
+  max-height: 100px;
+  margin: 5px 5px;
 }
 
 .social {
