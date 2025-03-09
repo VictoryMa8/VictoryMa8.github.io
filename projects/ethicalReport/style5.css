@@ -8,6 +8,10 @@ h1 {
   text-align: center;
 }
 
+p {
+  font-size: 1.25rem;
+}
+
 .topnav {
   background-color: rgb(160, 140, 233);
   overflow: auto;

@@ -1,6 +1,7 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgb(238, 228, 255);
+  text-align: center;
 }
 
 hr {
@@ -18,14 +19,16 @@ h3 {
 
 p {
   color: rgb(21, 20, 21);
-  width: 70%;
   text-align: center;
+  font-size: 1.5rem;
+  display: block;
+  width: 70%px;
+  margin: 50px;
 }
 
 .pClass {
   text-align: center;
   color: rgb(21, 20, 21);
-  width: 70%;
 }
 
 .topnav {
@@ -61,24 +64,29 @@ p {
   height: 32%;
   width: 32%;
   float: right;
-  margin: 5px;
+  margin: 20px;
 }
 .image8 {
   height: 25%;
   width: 22%;
   float: left;
-  margin: 5px;
+  margin: 20px;
 }
 
 #quiz {
   width: 800px;
   margin: 0 auto;
   padding: 20px;
+  color: ghostwhite;
   background-color: #6666f0;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(198, 222, 60, 0.2);
   text-align: center;
   margin-left: 400px;
+}
+
+#quiz h2 {
+  color: ghostwhite;
 }
 
 #question {

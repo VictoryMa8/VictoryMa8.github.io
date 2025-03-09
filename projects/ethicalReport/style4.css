@@ -2,6 +2,12 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgb(238, 228, 255);
   color: rgb(21, 20, 21);
+  text-align: center;
+}
+
+p {
+  font-size: 1.5rem;
+  margin: 60px;
 }
 
 h1,
@@ -37,16 +43,18 @@ h2 {
   color: rgb(21, 20, 21);
 }
 
+#img-div {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
 .image10 {
-  margin-left: auto;
-  margin-right: auto;
   height: 25%;
   width: 25%;
 }
 
 .image11 {
-  margin-left: auto;
-  margin-right: auto;
   height: 40%;
   width: 40%;
 }

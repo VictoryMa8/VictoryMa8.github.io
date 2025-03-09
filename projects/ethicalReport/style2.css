@@ -23,6 +23,7 @@ h3 {
 p {
   color: rgb(21, 20, 21);
   width: 70%;
+  font-size: 1.5rem;
 }
 
 .pClass {
@@ -68,8 +69,8 @@ p {
 }
 
 .image9 {
-  height: 30%;
-  width: 30%;
+  height: 35%;
+  width: 35%;
   float: right;
   margin: 5px;
 }
