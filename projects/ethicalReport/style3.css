@@ -25,7 +25,7 @@ p {
 .pClass {
   text-align: center;
   color: rgb(21, 20, 21);
-  width: 80%;
+  width: 70%;
 }
 
 .topnav {
@@ -51,10 +51,12 @@ p {
   background-color: #3904aa;
   color: white;
 }
+
 .aClass {
   color: rgb(21, 20, 21);
   text-align: center;
 }
+
 .image6 {
   height: 32%;
   width: 32%;
@@ -77,11 +79,6 @@ p {
   box-shadow: 0 0 10px rgba(198, 222, 60, 0.2);
   text-align: center;
   margin-left: 400px;
-}
-
-h2 {
-  text-align: center;
-  color: white;
 }
 
 #question {
