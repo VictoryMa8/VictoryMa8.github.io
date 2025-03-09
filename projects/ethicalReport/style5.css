@@ -1,44 +1,40 @@
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color:white;
-    background-color:rgb(30, 6, 69);
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: rgb(238, 228, 255);
+  color: rgb(21, 20, 21);
 }
 
 h1 {
-    text-align: center;
+  text-align: center;
 }
 
 .topnav {
-    background-color:rgb(160, 140, 233);
-    overflow:auto
-  }
+  background-color: rgb(160, 140, 233);
+  overflow: auto;
+}
 
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-  .topnav a.active {
-    background-color: #3904aa;
-    color: white;
-  }
+.topnav a.active {
+  background-color: #3904aa;
+  color: white;
+}
 
-  .aClass {
-    color:white;
-  }
-  .pClass {
-    text-align: center;
-  }
+.pClass {
+  text-align: center;
+}
 
 .formBox {
   background-color: white;
@@ -52,7 +48,7 @@ h1 {
   margin-bottom: 16px;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   margin-right: 8px;
 }
 
@@ -60,7 +56,7 @@ label {
   display: block;
   margin-bottom: 8px;
   font-size: 16px;
-  color:#3904aa;
+  color: #3904aa;
   font-weight: 600;
 }
 
@@ -82,7 +78,7 @@ button {
   cursor: pointer;
   width: 100%;
   font-size: 15px;
-  transition: .2s linear;
+  transition: 0.2s linear;
 }
 
 button:hover {
@@ -92,7 +88,7 @@ button:hover {
 }
 
 .image12 {
-  height:140px;
+  height: 140px;
   width: 100px;
   float: right;
   margin: 5px;
@@ -103,5 +99,3 @@ button:hover {
   float: left;
   margin: 5px;
 }
-
-

@@ -1,10 +1,31 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  background-color: rgb(30, 6, 69);
+  background-color: rgb(238, 228, 255);
 }
-h1 {
+
+hr {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+h1,
+h2,
+h3 {
   text-align: center;
+  color: rgb(21, 20, 21);
+}
+
+p {
+  color: rgb(21, 20, 21);
+  width: 70%;
+  text-align: center;
+}
+
+.pClass {
+  text-align: center;
+  color: rgb(21, 20, 21);
+  width: 80%;
 }
 
 .topnav {
@@ -31,7 +52,8 @@ h1 {
   color: white;
 }
 .aClass {
-  color: white;
+  color: rgb(21, 20, 21);
+  text-align: center;
 }
 .image6 {
   height: 32%;
