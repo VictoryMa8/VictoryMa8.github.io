@@ -1,7 +1,7 @@
 body {
   background-color: #dad7cd;
   color: #011627;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 700;
   margin: 0px;
   padding: 0px;
@@ -11,7 +11,8 @@ h1 {
   padding-top: 20px;
 }
 
-#links, #older-projects {
+#links,
+#older-projects {
   text-align: center;
   display: flex;
   justify-content: center;
@@ -24,7 +25,8 @@ h1 {
   display: none;
 }
 
-#links a, #older-projects a {
+#links a,
+#older-projects a {
   color: #ffffff;
   background-color: #6089e2;
   border: 2px solid black;
@@ -39,13 +41,20 @@ h1 {
   width: 60%;
 }
 
-#links a:hover, #older-projects a:hover {
+#links a:hover,
+#older-projects a:hover {
   background-color: #a1c6ea;
 }
 
 .icon {
   width: 70px;
   max-height: 70px;
+  margin: 5px 5px;
+}
+
+.iconTwo {
+  width: 120px;
+  max-height: 120px;
   margin: 5px 5px;
 }
 
@@ -95,17 +104,20 @@ h1 {
   text-align: center;
 }
 
-#footer p, #footer a {
+#footer p,
+#footer a {
   color: #03256c !important;
 }
 
 /* media queries */
 @media only screen and (max-width: 767px) {
-  #links, #older-projects {
+  #links,
+  #older-projects {
     font-size: 30px;
   }
 
-  #links a, #older-projects a {
+  #links a,
+  #older-projects a {
     width: 90%;
     padding: 15px;
   }
@@ -115,6 +127,12 @@ h1 {
     max-height: 50px;
   }
 
+  .iconTwo {
+    width: 90px;
+    max-height: 90px;
+    margin: 5px 5px;
+  }
+
   #specifier {
     width: 80%;
     padding: 15px;
@@ -122,11 +140,13 @@ h1 {
 }
 
 @media only screen and (max-width: 400px) {
-  #links, #older-projects {
-    font-size: 20px; 
+  #links,
+  #older-projects {
+    font-size: 20px;
   }
 
-  #links a, #older-projects a {
+  #links a,
+  #older-projects a {
     width: 100%;
     padding: 10px;
   }
@@ -134,6 +154,12 @@ h1 {
   .icon {
     width: 40px;
     max-height: 40px;
+  }
+
+  .iconTwo {
+    width: 70px;
+    max-height: 70px;
+    margin: 5px 5px;
   }
 
   #specifier {
