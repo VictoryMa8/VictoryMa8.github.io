@@ -1,3 +1,3 @@
-# portfolio
+# Portfolio
 
-This is my portfolio, it is a work in-progress. I will be adding my projects in the future.
+This is my portfolio, you can visit it at victoryma8.github.io
