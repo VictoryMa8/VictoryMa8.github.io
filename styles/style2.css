@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: 'EB Garamond', 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
 }
 
@@ -30,6 +30,7 @@ h1, h2, h3 {
   text-decoration: none;
   color: #fdfffc;
   margin: 0px;
+  font-family: 'Courier New', Courier, monospace;
   transition: background-color 0.3s;
 }
 
