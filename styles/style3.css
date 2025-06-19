@@ -1,10 +1,15 @@
 body {
   background-color: #dad7cd;
   color: #011627;
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
   margin: 0px;
   padding: 0px;
+}
+
+h1, h2, h3 {
+    font-family: 'EB Garamond', 'Courier New', Courier, monospace;
+    font-weight: 700;
 }
 
 /* nav bar */
@@ -13,30 +18,27 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #03256c;
+  background-color: #028090;
   display: flex;
-  justify-content: end;
-  font-family: "Raleway", sans-serif;
-}
-
-#nav li {
-  float: left;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #nav li a {
   display: flex;
-  padding: 12px 12px;
+  padding: 10px 40px;
   text-decoration: none;
   color: #fdfffc;
   margin: 0px;
+  transition: background-color 0.3s;
 }
 
 #nav li a:hover {
-  background-color: #1768ac;
+  background-color: #00a896;
 }
 
 #nav .active {
-  background-color: #1768ac;
+  background-color: #00a896;
 }
 
 #main {
