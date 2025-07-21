@@ -34,12 +34,12 @@ h1 {
 #older-projects a {
   color: #ffffff;
   background-color: #028090;
-  border: 2px solid black;
-  border-radius: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
   text-decoration: none;
   width: 70%;
-  margin: 5px;
-  padding: 20px;
+  margin: 4px;
+  padding: 10px;
   transition: background-color 0.3s;
 }
 
@@ -96,7 +96,7 @@ h1 {
 #specifier {
   color: #ffffff;
   background-color: #028090;
-  border: 2px solid black;
+  border: 1px solid black;
   text-decoration: none;
   width: 40%;
   margin: 5px;
@@ -146,6 +146,7 @@ h1 {
   #links,
   #older-projects {
     font-size: 20px;
+    margin-inline: 10px;
   }
 
   #links a,
